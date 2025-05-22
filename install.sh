@@ -9,6 +9,7 @@ install() {
 }
 
 install bashrc ~/.bashrc
+install kitty ~/.config/kitty
 
 unset install
 unset path
