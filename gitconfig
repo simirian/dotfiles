@@ -1,0 +1,7 @@
+[user]
+  name = simirian
+  email = simirian5813@gmail.com
+[init]
+  defaultBranch = main
+[core]
+  editor = nvim

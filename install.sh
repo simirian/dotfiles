@@ -10,6 +10,7 @@ install() {
 
 install bashrc ~/.bashrc
 install kitty ~/.config/kitty
+install gitconfig ~/.gitconfig
 
 unset install
 unset path
