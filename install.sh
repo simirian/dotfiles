@@ -8,5 +8,7 @@ install() {
   ln -s --backup=existing "${path%/*}/$1" "$2"
 }
 
+install bashrc ~/.bashrc
+
 unset install
 unset path
