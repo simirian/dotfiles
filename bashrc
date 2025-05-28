@@ -1,4 +1,4 @@
-# ~/.bashrc
+#!/bin/bash
 
 export TERMINAL=kitty
 export EDITOR=nvim
@@ -32,5 +32,15 @@ fi
 
 clear
 echo -e "\e[93m"
-cat "$HOME/dotfiles/theme/thead/pixel.bashlogo"
+cat << EOF
+                                          ██
+                                         ████
+       ▄██████ ███ ███  ████   ███      ▀▀████
+      ███▀    ███ ████ █████  ███      █▄▄ ▀███
+     ███████ ███ ███████████ ███      ██████████
+       ▄███ ███ ███ ████ ███ ██      ████▀  ▀████
+   ██████▀ ███ ███  ███  ███ █      █████    ██▀▀▀
+                                   ██████▄  ▄████▄▄
+                                  ███▀▀        ▀▀███
+EOF
 echo -e "\e[0m"
