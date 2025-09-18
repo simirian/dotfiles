@@ -1,10 +1,13 @@
 #!/bin/bash
 
+if [[ $HOME == /root* ]]; then
+	echo "Do not run this script as root!"
+	exit 1
+fi
+
 script=$(which $0)
 cfg=${XDG_CONFIG_HOME-$HOME/.config}
 cfg=${cfg%/}
-
-echo $HOME
 
 flags=("-fsT")
 dry=""
@@ -29,9 +32,12 @@ while [[ -n $1 ]]; do
 done
 
 if [[ -n $pkg ]]; then
-	pacman -Syu --needed - < "${script%/*}/pkglist.txt"\
-		|| echo "Failed to install packages, exiting."\
-		&& exit 1
+	echo "Attempting to install packages with pacman; sudo will ask for credentials."
+	sudo pacman -Syu --needed - < "${script%/*}/pkglist.txt"
+	if [[ $? == 1 ]]; then
+		echo "Failed to install packages, exiting."
+		exit 1
+	fi
 fi
 
 declare -A targets
