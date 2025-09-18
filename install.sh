@@ -1,16 +1,51 @@
-#!/bin/sh
+#!/bin/bash
 
-path="$PWD/$0"
+script=$(which $0)
+cfg=${XDG_CONFIG_HOME-$HOME/.config}
+cfg=${cfg%/}
 
-install() {
-  echo "installing $1 to $2"
-  test -d "${2%/*}" || mkdir -p "${2%/*}"
-  ln -ns --backup=existing "${path%/*}/$1" "$2"
-}
+echo $HOME
 
-install bashrc ~/.bashrc
-install kitty ~/.config/kitty
-install gitconfig ~/.gitconfig
+flags=("-fsT")
+dry=""
+pkg=""
+while [[ -n $1 ]]; do
+	case $1 in
+		--backup*)
+			flags+=($1)
+			;;
+		--pkg)
+			pkg=true
+			;;
+		--dry-run)
+			dry=true
+			;;
+		*)
+			echo "Unknown option: $1"
+			exit 1
+			;;
+	esac
+	shift
+done
 
-unset install
-unset path
+if [[ -n $pkg ]]; then
+	pacman -Syu --needed - < "${script%/*}/pkglist.txt"\
+		|| echo "Failed to install packages, exiting."\
+		&& exit 1
+fi
+
+declare -A targets
+targets[hypr]="$cfg/hypr"
+targets[kitty]="$cfg/kitty"
+targets[tmux]="$cfg/tmux"
+targets[bashrc]="$HOME/.bashrc"
+targets[gitconfig]="$HOME/.gitconfig"
+
+for src in ${!targets[@]}; do
+	msg="Installing $src to ${targets[$src]} ..."
+	echo $msg
+	if [[ -z $dry ]]; then
+		ln ${flags[@]} "${script%/*}/$src" "${targets[$src]}"\
+			&& echo -e "\e[1F$msg DONE"
+	fi
+done
