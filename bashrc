@@ -3,6 +3,7 @@
 export TERMINAL=kitty
 export EDITOR=nvim
 export PATH="$HOME/.local/bin:$PATH"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
