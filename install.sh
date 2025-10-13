@@ -46,6 +46,7 @@ targets[kitty]="$cfg/kitty"
 targets[tmux]="$cfg/tmux"
 targets[bashrc]="$HOME/.bashrc"
 targets[gitconfig]="$HOME/.gitconfig"
+targets[nvim]="$cfg/nvim"
 
 for src in ${!targets[@]}; do
 	msg="Installing $src to ${targets[$src]} ..."
