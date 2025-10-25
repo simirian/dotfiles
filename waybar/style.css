@@ -1,0 +1,48 @@
+* {
+  font: 13px JetBrains Mono;
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-height: 0;
+  transition: none;
+}
+
+window#waybar {
+  background-color: #484440;
+  color: #a09890;
+}
+
+#workspaces>button {
+  background: #33312e;
+  color: #a09890;
+  border-radius: 0;
+}
+
+#workspaces>button:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#workspaces>button.active {
+  background: #b4a03c;
+  color: #242220;
+}
+
+#clock {
+  background: #33312e;
+  padding: 0 10px;
+}
+
+#tray,
+#network,
+#bluetooth,
+#wireplumber,
+#backlight {
+  background: #33312e;
+  padding: 0 0 0 10px;
+}
+
+#battery {
+  background: #33312e;
+  padding: 0 10px;
+}

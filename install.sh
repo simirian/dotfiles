@@ -57,18 +57,20 @@ if [[ -n $pkg ]]; then
 fi
 
 declare -A targets
+targets[bashrc]="$HOME/.bashrc"
+targets[fuzzel]="$cfg/fuzzel"
+targets[gitconfig]="$HOME/.gitconfig"
 targets[hypr]="$cfg/hypr"
 targets[kitty]="$cfg/kitty"
-targets[tmux]="$cfg/tmux"
-targets[bashrc]="$HOME/.bashrc"
-targets[gitconfig]="$HOME/.gitconfig"
 targets[nvim]="$cfg/nvim"
-targets[fuzzel]="$cfg/fuzzel"
+targets[tmux]="$cfg/tmux"
+targets[waybar]="$cfg/waybar"
 
 for src in ${!targets[@]}; do
   msg="Installing $src to ${targets[$src]} ..."
   echo $msg
   if [[ -z $dry ]]; then
+    mkdir -p $(dirname ${targets[$src]})
     ln ${flags[@]} "${script%/*}/$src" "${targets[$src]}"\
       && echo -e "\e[1F$msg DONE"
   fi

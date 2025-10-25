@@ -1,0 +1,52 @@
+{
+  "height": 20,
+  "reload_style_on_change": true,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "network",
+    "bluetooth",
+    "wireplumber",
+    "backlight",
+    "battery"
+  ],
+  "hyprland/workspaces": {
+    "format": " {id} ",
+    "persistent-workspaces": { "*": 6 }
+  },
+  "clock": {
+    "interval": 10,
+    "format": "{:%R}"
+  },
+  "tray": {
+    "icon-size": 10
+  },
+  "network": {
+    "format": "{icon} {essid}",
+    "format-disconnected": "󰤮",
+    "format-disabled": "󰤮",
+    "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ]
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-no-controller": "󰂲"
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰸈",
+    "format-icons": [ "󰕿", "󰖀", "󰕾" ]
+  },
+  "backlight": {
+    "format": "󰃟 {percent}%"
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": [ "󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
+  }
+}
