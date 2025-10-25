@@ -4,6 +4,7 @@ uwsm
 hyprland
 wireplumber
 brightnessctl
+waybar
 kitty
 fuzzel
 firefox
