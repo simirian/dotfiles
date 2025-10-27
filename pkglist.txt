@@ -2,10 +2,13 @@ neovim
 tmux
 uwsm
 hyprland
+hyprlock
+hyprpolkitagent
 wireplumber
 brightnessctl
 waybar
 kitty
+fnott
 fuzzel
 firefox
 libreoffice-still
