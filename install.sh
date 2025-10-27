@@ -58,6 +58,7 @@ fi
 
 declare -A targets
 targets[bashrc]="$HOME/.bashrc"
+targets[fnott]="$cfg/fnott"
 targets[fuzzel]="$cfg/fuzzel"
 targets[gitconfig]="$HOME/.gitconfig"
 targets[hypr]="$cfg/hypr"
