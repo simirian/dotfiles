@@ -3,6 +3,7 @@ tmux
 uwsm
 hyprland
 hyprlock
+hypridle
 hyprpolkitagent
 wireplumber
 brightnessctl
