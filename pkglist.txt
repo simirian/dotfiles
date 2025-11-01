@@ -5,6 +5,7 @@ hyprland
 hyprlock
 hypridle
 hyprpolkitagent
+wl-clipboard
 wireplumber
 brightnessctl
 waybar
